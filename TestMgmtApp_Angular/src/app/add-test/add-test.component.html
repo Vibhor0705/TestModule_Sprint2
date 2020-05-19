@@ -1,0 +1,61 @@
+<h1>Add Test Form</h1>  
+<form #formdata="ngForm" 
+(ngSubmit)="formdata.valid && register(formdata)">
+
+ <div>
+     <label>Test title</label><br>
+     <input type="text" ngModel name="testTitle" class="form-control" required minlength="2"
+     ngModel #testTitle="ngModel" >
+</div>
+
+<div *ngIf="testTitle.errors!=null && testTitle.errors.required">
+     Test Title is required.
+</div>
+
+<div *ngIf="testTitle.errors!=null && testTitle.errors.minlength">
+     minimum length should be 2
+</div> 
+<br>
+<div>    
+     <label>Test Total Marks</label><br>
+     <input type="number" name="testTotalMarks"
+     class="form-control" required
+      ngModel #testTotalMarks="ngModel">
+</div>
+
+<div *ngIf="testTotalMarks.errors!=null && testTotalMarks.errors.required">
+     test Total Marks is required.
+</div>
+<br>
+<div>    
+     <label>Test startTime</label><br>
+     <input type="text" name="startTime"
+     class="form-control" 
+      ngModel #testStartTime="ngModel">
+</div>
+<br>
+<div>    
+     <label>Test EndTime</label><br>
+     <input type="text" name="endTime"
+     class="form-control" 
+      ngModel #testEndTime="ngModel">
+</div>
+<br>
+<input type="submit" value="submit" >
+
+</form>
+
+ 
+<div id="addedTest" *ngIf="addedTest!=null">
+<h3>Test Added
+</h3>
+testId = {{addedTest.testId}}
+<br>
+testTitle = {{addedTest.testTitle}}
+<br>
+testTotalMarks = {{addedTest.testTotalMarks}}
+<br>
+testTotalMarks = {{addedTest.startTime}}
+<br>
+testTotalMarks = {{addedTest.endTime}}
+</div> 

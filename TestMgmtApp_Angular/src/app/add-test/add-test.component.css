@@ -1,0 +1,29 @@
+h1
+{ position:relative;
+	left:400px;
+	top:5px;
+	text-decoration:underline;
+	
+}
+
+form
+{   
+    position:relative;
+	left:400px;
+	top:5px;
+	color:black;
+    font:bold;
+	font-size:15px;
+	
+}
+
+#addedTest
+{
+    position:relative;
+	left:400px;
+	top:5px;
+	color:black;
+    font:bold;
+	font-size:15px;
+
+}

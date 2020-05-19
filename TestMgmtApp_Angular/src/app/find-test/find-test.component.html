@@ -1,0 +1,44 @@
+<h1>Find Test Form</h1>  
+<form #formdata="ngForm" 
+(ngSubmit)="formdata.valid && findTestById(formdata)">
+
+
+
+<div>    
+     <label>Test Id</label><br>
+     <input type="number" name="testId"
+     class="form-control" required
+      ngModel #testId="ngModel">
+</div>
+
+<div *ngIf="testId.errors!=null && testId.errors.required">
+     test id is required.
+</div>
+
+<br>
+
+<input type="submit" value="Find Test" >
+
+</form>
+
+<div id="result" *ngIf="foundStatus==='found'">
+     <h3>Test Found
+     </h3>
+     testId = {{foundTest.testId}}
+     <br>
+     testTitle = {{foundTest.testTitle}}
+     <br>
+     testTotalMarks = {{foundTest.testTotalMarks}}
+     <br>
+     testStartTime = {{foundTest.startTime}}
+     <br>
+     testStartTime = {{foundTest.endTime}}
+     </div> 
+     
+   
+     <div id="result" *ngIf="errMsg !== null">
+          <h3>{{errMsg}}
+          </h3>
+                
+     </div> 
+  

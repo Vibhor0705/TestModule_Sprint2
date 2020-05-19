@@ -1,0 +1,21 @@
+<h1>All Tests..</h1>
+<table border="1">
+<tr>
+    <th>TestId</th>
+    <th>TestTitle</th>
+    <th>TestTotalMarks</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Action</th>
+</tr>
+<tr *ngFor="let test of allTest">
+    <td>{{test.testId}}</td>
+    <td>{{test.testTitle}}</td>
+    <td>{{test.testTotalMarks}}</td>
+    <td>{{test.startTime}}</td>
+    <td>{{test.endTime}}</td>
+    <td>
+        <button class="btn btn-sucess"  (click)="removeTest(test)">Delete</button>
+    </td>
+</tr>
+</table>

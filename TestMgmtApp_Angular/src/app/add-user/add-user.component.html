@@ -1,0 +1,53 @@
+<h1>Add User Form</h1>  
+<form #formdata="ngForm" 
+(ngSubmit)="formdata.valid && register(formdata)">
+ 
+<div>    
+    <label>User Name</label><br>
+    <input type="text" name="userName"
+    class="form-control" required
+     ngModel #userName="ngModel">
+</div>
+
+<div *ngIf="userName.errors!=null && userName.errors.required">
+    User Name is required.
+</div>
+
+<br>
+ <div>
+     <label>User password</label><br>
+     <input type="password" ngModel name="userPassword" class="form-control" required minlength="4"
+     ngModel #userPassword="ngModel" >
+</div>
+
+<div *ngIf="userPassword.errors!=null && userPassword.errors.required">
+     Test Title is required.
+</div>
+
+<div *ngIf="userPassword.errors!=null && userPassword.errors.minlength">
+     minimum length should be 4
+</div> 
+<br>
+
+<div>    
+     <label>User isAdmin</label><br>
+     <input type="text" ngModel name="isAdmin">
+</div>
+<br>
+
+<input type="submit" value="Add User" >
+
+</form>
+
+ 
+<div id="addedUser" *ngIf="addedUser!=null">
+<h3>User Added
+</h3>
+userId = {{addedUser.userId}}
+<br>
+userName = {{addedUser.userName}}
+<br>
+isAdmin = {{addedUser.isAdmin}}
+<br>
+
+</div> 
